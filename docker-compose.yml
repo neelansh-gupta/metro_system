@@ -52,9 +52,9 @@ services:
       - DB_PORT=5432
       
       # Django settings
-      - SECRET_KEY=django-insecure-your-secret-key-here-change-in-production
+      - SECRET_KEY=83f38598a8b31798ba07ca548112399206c05740330a4730b962a4034f439bd4
       - DEBUG=True
-      - ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
+      - ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0,metro-app-v1.sea-skull.xyz
       
       # Google OAuth credentials
       - GOOGLE_CLIENT_ID=70253616017-ni3pa2tri22led0doj4e6v8rc90bi0ov.apps.googleusercontent.com
