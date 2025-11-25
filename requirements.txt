@@ -1,10 +1,18 @@
-# Django Metro Ticket System Requirements
+# Metro Ticket System - Python Dependencies
+
+# Core
 Django==4.2.7
 psycopg2-binary==2.9.9
-pillow==10.1.0
 gunicorn==21.2.0
-python-decouple==3.8
+
+# Forms and UI
 django-crispy-forms==2.1
 crispy-bootstrap5==2023.10
+
+# Utilities
+python-decouple==3.8
+pillow==10.1.0
 django-extensions==3.2.3
+
+# Authentication
 django-allauth==0.57.0
