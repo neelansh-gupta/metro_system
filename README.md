@@ -73,11 +73,3 @@ docker-compose down
 # Reset everything
 docker-compose down -v
 ```
-
-## Production Deployment
-
-1. Update `SECRET_KEY` in docker-compose.yml
-2. Set `DEBUG=False`
-3. Add your domain to `ALLOWED_HOSTS`
-4. Configure SSL certificates in nginx.conf
-5. Run `docker-compose up -d`
