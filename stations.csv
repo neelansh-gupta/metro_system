@@ -1,0 +1,255 @@
+name,lines,neighbours
+Airport,Red,Aerocity:Red
+Aerocity,Red,Airport:Red;Mahipalpur:Red
+Mahipalpur,Red,Aerocity:Red;Vasant Kunj:Red
+Vasant Kunj,Red,Mahipalpur:Red;Saket:Red
+Saket,Red;Yellow,Vasant Kunj:Red;Hauz Khas:Red;Malviya Nagar:Yellow
+Hauz Khas,Red;Yellow,Saket:Red;Green Park:Red;IIT:Yellow
+Green Park,Red,Hauz Khas:Red;AIIMS:Red
+AIIMS,Red;Yellow,Green Park:Red;INA:Red;Safdarjung:Yellow
+INA,Red,AIIMS:Red;Central Secretariat:Red
+Central Secretariat,Red;Yellow,INA:Red;Patel Chowk:Red;Udyog Bhawan:Yellow
+Patel Chowk,Red,Central Secretariat:Red;Rajiv Chowk:Red
+Rajiv Chowk,Red;Blue;Yellow,Patel Chowk:Red;New Delhi:Red;Barakhamba:Blue;Palika Bazaar:Yellow
+New Delhi,Red;Orange,Rajiv Chowk:Red;Chawri Bazar:Red;Shivaji Stadium:Orange
+Chawri Bazar,Red,New Delhi:Red;Chandni Chowk:Red
+Chandni Chowk,Red,Chawri Bazar:Red;Kashmere Gate:Red
+Kashmere Gate,Red;Yellow,Chandni Chowk:Red;Shastri Nagar:Red;Civil Lines:Yellow
+Shastri Nagar,Red,Kashmere Gate:Red;Tis Hazari:Red
+Tis Hazari,Red,Shastri Nagar:Red;Pul Bangash:Red
+Pul Bangash,Red,Tis Hazari:Red;Pratap Nagar:Red
+Pratap Nagar,Red,Pul Bangash:Red;Shastri Park:Red
+Shastri Park,Red,Pratap Nagar:Red;Seelampur:Red
+Seelampur,Red,Shastri Park:Red;Welcome:Red
+Welcome,Red,Seelampur:Red
+Dwarka,Blue,Dwarka Mor:Blue
+Dwarka Mor,Blue,Dwarka:Blue;Nawada:Blue
+Nawada,Blue,Dwarka Mor:Blue;Uttam Nagar:Blue
+Uttam Nagar,Blue,Nawada:Blue;Janakpuri West:Blue
+Janakpuri West,Blue,Uttam Nagar:Blue;Janakpuri East:Blue
+Janakpuri East,Blue,Janakpuri West:Blue;Tilak Nagar:Blue
+Tilak Nagar,Blue,Janakpuri East:Blue;Subhash Nagar:Blue
+Subhash Nagar,Blue,Tilak Nagar:Blue;Tagore Garden:Blue
+Tagore Garden,Blue,Subhash Nagar:Blue;Rajouri Garden:Blue
+Rajouri Garden,Blue;Pink,Tagore Garden:Blue;Ramesh Nagar:Blue;Mayapuri:Pink
+Ramesh Nagar,Blue,Rajouri Garden:Blue;Moti Nagar:Blue
+Moti Nagar,Blue,Ramesh Nagar:Blue;Kirti Nagar:Blue
+Kirti Nagar,Blue;Green,Moti Nagar:Blue;Shadipur:Blue;Satguru Ram Singh:Green
+Shadipur,Blue,Kirti Nagar:Blue;Patel Nagar:Blue
+Patel Nagar,Blue,Shadipur:Blue;Rajendra Place:Blue
+Rajendra Place,Blue,Patel Nagar:Blue;Karol Bagh:Blue
+Karol Bagh,Blue,Rajendra Place:Blue;RK Ashram:Blue
+RK Ashram,Blue,Karol Bagh:Blue;Barakhamba:Blue
+Barakhamba,Blue,RK Ashram:Blue;Rajiv Chowk:Blue
+Mandi House,Blue;Violet,Barakhamba:Blue;Pragati Maidan:Blue;ITO:Violet
+Pragati Maidan,Blue,Mandi House:Blue;Indraprastha:Blue
+Indraprastha,Blue,Pragati Maidan:Blue;Yamuna Bank:Blue
+Yamuna Bank,Blue,Indraprastha:Blue;Akshardham:Blue
+Akshardham,Blue,Yamuna Bank:Blue;Mayur Vihar:Blue
+Mayur Vihar,Blue;Pink,Akshardham:Blue;Mayur Vihar Ext:Blue;Mayur Vihar Pocket:Pink
+Mayur Vihar Ext,Blue,Mayur Vihar:Blue;Noida Sector 15:Blue
+Noida Sector 15,Blue,Mayur Vihar Ext:Blue;Noida Sector 16:Blue
+Noida Sector 16,Blue,Noida Sector 15:Blue;Noida Sector 18:Blue
+Noida Sector 18,Blue,Noida Sector 16:Blue;Botanical Garden:Blue
+Botanical Garden,Blue;Magenta,Noida Sector 18:Blue;Noida Golf Course:Blue;Okhla Bird Sanctuary:Magenta
+Noida Golf Course,Blue,Botanical Garden:Blue;Noida City Centre:Blue
+Noida City Centre,Blue,Noida Golf Course:Blue
+HUDA City Centre,Yellow,IFFCO Chowk:Yellow
+IFFCO Chowk,Yellow,HUDA City Centre:Yellow;MG Road:Yellow
+MG Road,Yellow,IFFCO Chowk:Yellow;Sikandarpur:Yellow
+Sikandarpur,Yellow,MG Road:Yellow;Guru Dronacharya:Yellow
+Guru Dronacharya,Yellow,Sikandarpur:Yellow;Arjan Garh:Yellow
+Arjan Garh,Yellow,Guru Dronacharya:Yellow;Ghitorni:Yellow
+Ghitorni,Yellow,Arjan Garh:Yellow;Sultanpur:Yellow
+Sultanpur,Yellow,Ghitorni:Yellow;Chhattarpur:Yellow
+Chhattarpur,Yellow,Sultanpur:Yellow;Qutub Minar:Yellow
+Qutub Minar,Yellow,Chhattarpur:Yellow;Saket:Yellow
+Malviya Nagar,Yellow,Saket:Yellow;Hauz Khas:Yellow
+IIT,Yellow,Hauz Khas:Yellow;RK Puram:Yellow
+RK Puram,Yellow,IIT:Yellow;Munirka:Yellow
+Munirka,Yellow,RK Puram:Yellow;Vasant Vihar:Yellow
+Vasant Vihar,Yellow,Munirka:Yellow;Shankar Vihar:Yellow
+Shankar Vihar,Yellow,Vasant Vihar:Yellow;IGI Airport:Yellow
+IGI Airport,Yellow;Orange,Shankar Vihar:Yellow;Sadar Bazar:Yellow;Delhi Aerocity:Orange
+Sadar Bazar,Yellow,IGI Airport:Yellow;Palam:Yellow
+Palam,Yellow,Sadar Bazar:Yellow;Dashrath Puri:Yellow
+Dashrath Puri,Yellow,Palam:Yellow;Dabri Mor:Yellow
+Dabri Mor,Yellow,Dashrath Puri:Yellow;Janakpuri:Yellow
+Janakpuri,Yellow,Dabri Mor:Yellow;Uttam Nagar East:Yellow
+Uttam Nagar East,Yellow,Janakpuri:Yellow;Nawada Metro:Yellow
+Nawada Metro,Yellow,Uttam Nagar East:Yellow;Dwarka Mor Metro:Yellow
+Dwarka Mor Metro,Yellow,Nawada Metro:Yellow;Dwarka Metro:Yellow
+Dwarka Metro,Yellow,Dwarka Mor Metro:Yellow;Dwarka Sector 14:Yellow
+Dwarka Sector 14,Yellow,Dwarka Metro:Yellow;Dwarka Sector 13:Yellow
+Dwarka Sector 13,Yellow,Dwarka Sector 14:Yellow;Dwarka Sector 12:Yellow
+Dwarka Sector 12,Yellow,Dwarka Sector 13:Yellow;Dwarka Sector 11:Yellow
+Dwarka Sector 11,Yellow,Dwarka Sector 12:Yellow;Dwarka Sector 10:Yellow
+Dwarka Sector 10,Yellow,Dwarka Sector 11:Yellow;Dwarka Sector 9:Yellow
+Dwarka Sector 9,Yellow,Dwarka Sector 10:Yellow;Dwarka Sector 8:Yellow
+Dwarka Sector 8,Yellow,Dwarka Sector 9:Yellow;Dwarka Sector 21:Yellow
+Dwarka Sector 21,Yellow,Dwarka Sector 8:Yellow
+Safdarjung,Yellow,AIIMS:Yellow;Jorbagh:Yellow
+Jorbagh,Yellow,Safdarjung:Yellow;Lok Kalyan Marg:Yellow
+Lok Kalyan Marg,Yellow,Jorbagh:Yellow;Udyog Bhawan:Yellow
+Udyog Bhawan,Yellow,Lok Kalyan Marg:Yellow;Central Secretariat:Yellow
+Palika Bazaar,Yellow,Rajiv Chowk:Yellow;RK Marg:Yellow
+RK Marg,Yellow,Palika Bazaar:Yellow;Rajendra Place Metro:Yellow
+Rajendra Place Metro,Yellow,RK Marg:Yellow;Patel Nagar Metro:Yellow
+Patel Nagar Metro,Yellow,Rajendra Place Metro:Yellow;Shadipur Metro:Yellow
+Shadipur Metro,Yellow,Patel Nagar Metro:Yellow;Kirti Nagar Metro:Yellow
+Kirti Nagar Metro,Yellow,Shadipur Metro:Yellow;Moti Nagar Metro:Yellow
+Moti Nagar Metro,Yellow,Kirti Nagar Metro:Yellow;Ramesh Nagar Metro:Yellow
+Ramesh Nagar Metro,Yellow,Moti Nagar Metro:Yellow;Rajouri Garden Metro:Yellow
+Rajouri Garden Metro,Yellow,Ramesh Nagar Metro:Yellow;Tagore Garden Metro:Yellow
+Tagore Garden Metro,Yellow,Rajouri Garden Metro:Yellow;Subhash Nagar Metro:Yellow
+Subhash Nagar Metro,Yellow,Tagore Garden Metro:Yellow;Tilak Nagar Metro:Yellow
+Tilak Nagar Metro,Yellow,Subhash Nagar Metro:Yellow;Janakpuri East Metro:Yellow
+Janakpuri East Metro,Yellow,Tilak Nagar Metro:Yellow;Janakpuri West Metro:Yellow
+Janakpuri West Metro,Yellow,Janakpuri East Metro:Yellow
+Civil Lines,Yellow,Kashmere Gate:Yellow;Vidhan Sabha:Yellow
+Vidhan Sabha,Yellow,Civil Lines:Yellow;Vishwavidyalaya:Yellow
+Vishwavidyalaya,Yellow,Vidhan Sabha:Yellow;GTB Nagar:Yellow
+GTB Nagar,Yellow,Vishwavidyalaya:Yellow;Model Town:Yellow
+Model Town,Yellow,GTB Nagar:Yellow;Azadpur:Yellow
+Azadpur,Yellow;Pink,Model Town:Yellow;Adarsh Nagar:Yellow;Majlis Park:Pink
+Adarsh Nagar,Yellow,Azadpur:Yellow;Jahangirpuri:Yellow
+Jahangirpuri,Yellow,Adarsh Nagar:Yellow;Haiderpur:Yellow
+Haiderpur,Yellow,Jahangirpuri:Yellow;Rohini Sector 18:Yellow
+Rohini Sector 18,Yellow,Haiderpur:Yellow;Samaypur Badli:Yellow
+Samaypur Badli,Yellow,Rohini Sector 18:Yellow
+Inderlok,Green;Red,Ashok Park Main:Green;Kanhaiya Nagar:Red
+Ashok Park Main,Green,Inderlok:Green;Punjabi Bagh:Green
+Punjabi Bagh,Green;Pink,Ashok Park Main:Green;Shivaji Park:Green;Punjabi Bagh West:Pink
+Shivaji Park,Green,Punjabi Bagh:Green;Madipur:Green
+Madipur,Green,Shivaji Park:Green;Paschim Vihar East:Green
+Paschim Vihar East,Green,Madipur:Green;Paschim Vihar West:Green
+Paschim Vihar West,Green,Paschim Vihar East:Green;Peeragarhi:Green
+Peeragarhi,Green,Paschim Vihar West:Green;Udyog Nagar:Green
+Udyog Nagar,Green,Peeragarhi:Green;Maharaja Surajmal:Green
+Maharaja Surajmal,Green,Udyog Nagar:Green;Nangloi:Green
+Nangloi,Green,Maharaja Surajmal:Green;Nangloi Railway:Green
+Nangloi Railway,Green,Nangloi:Green;Rajdhani Park:Green
+Rajdhani Park,Green,Nangloi Railway:Green;Mundka:Green
+Mundka,Green,Rajdhani Park:Green;Mundka Industrial:Green
+Mundka Industrial,Green,Mundka:Green;Ghevra:Green
+Ghevra,Green,Mundka Industrial:Green;Tikri Kalan:Green
+Tikri Kalan,Green,Ghevra:Green;Tikri Border:Green
+Tikri Border,Green,Tikri Kalan:Green;Pandit Shree Ram:Green
+Pandit Shree Ram,Green,Tikri Border:Green;Bahadurgarh City:Green
+Bahadurgarh City,Green,Pandit Shree Ram:Green;Brigadier HS Bedi:Green
+Brigadier HS Bedi,Green,Bahadurgarh City:Green
+Satguru Ram Singh,Green,Kirti Nagar:Green;Ashok Park:Green
+Ashok Park,Green,Satguru Ram Singh:Green
+Majlis Park,Pink,Azadpur:Pink;Shalimar Bagh:Pink
+Shalimar Bagh,Pink,Majlis Park:Pink;Netaji Subhash Place:Pink
+Netaji Subhash Place,Pink;Red,Shalimar Bagh:Pink;Shakurpur:Pink;Kohat Enclave:Red
+Shakurpur,Pink,Netaji Subhash Place:Pink;Punjabi Bagh West:Pink
+Punjabi Bagh West,Pink,Shakurpur:Pink;Punjabi Bagh:Pink
+ESI Hospital,Pink,Punjabi Bagh:Pink;Rajouri Garden:Pink
+Mayapuri,Pink,Rajouri Garden:Pink;Naraina Vihar:Pink
+Naraina Vihar,Pink,Mayapuri:Pink;Delhi Cantt:Pink
+Delhi Cantt,Pink;Orange,Naraina Vihar:Pink;Durgabai Deshmukh:Pink;Delhi Cantt Airport:Orange
+Durgabai Deshmukh,Pink,Delhi Cantt:Pink;Sir Vishweshwaraiah:Pink
+Sir Vishweshwaraiah,Pink,Durgabai Deshmukh:Pink;Bhikaji Cama:Pink
+Bhikaji Cama,Pink,Sir Vishweshwaraiah:Pink;Sarojini Nagar:Pink
+Sarojini Nagar,Pink,Bhikaji Cama:Pink;INA Pink:Pink
+INA Pink,Pink,Sarojini Nagar:Pink;South Extension:Pink
+South Extension,Pink,INA Pink:Pink;Lajpat Nagar:Pink
+Lajpat Nagar,Pink;Violet,South Extension:Pink;Vinobapuri:Pink;Moolchand:Violet
+Vinobapuri,Pink,Lajpat Nagar:Pink;Ashram:Pink
+Ashram,Pink,Vinobapuri:Pink;Hazrat Nizamuddin:Pink
+Hazrat Nizamuddin,Pink,Ashram:Pink;Mayur Vihar Pocket:Pink
+Mayur Vihar Pocket,Pink,Hazrat Nizamuddin:Pink;Mayur Vihar:Pink
+Trilokpuri,Pink,Mayur Vihar:Pink;East Vinod Nagar:Pink
+East Vinod Nagar,Pink,Trilokpuri:Pink;Mandawali:Pink
+Mandawali,Pink,East Vinod Nagar:Pink;IP Extension:Pink
+IP Extension,Pink,Mandawali:Pink;Anand Vihar:Pink
+Anand Vihar,Pink;Blue,IP Extension:Pink;Karkardooma:Pink;Anand Vihar ISBT:Blue
+Karkardooma,Pink;Blue,Anand Vihar:Pink;Karkardooma Court:Pink;Karkardooma Metro:Blue
+Karkardooma Court,Pink,Karkardooma:Pink;Krishna Nagar:Pink
+Krishna Nagar,Pink,Karkardooma Court:Pink;East Azad Nagar:Pink
+East Azad Nagar,Pink,Krishna Nagar:Pink;Welcome Pink:Pink
+Welcome Pink,Pink,East Azad Nagar:Pink;Jaffrabad:Pink
+Jaffrabad,Pink,Welcome Pink:Pink;Maujpur:Pink
+Maujpur,Pink,Jaffrabad:Pink;Gokulpuri:Pink
+Gokulpuri,Pink,Maujpur:Pink;Johri Enclave:Pink
+Johri Enclave,Pink,Gokulpuri:Pink;Shiv Vihar:Pink
+Shiv Vihar,Pink,Johri Enclave:Pink
+New Delhi Railway,Orange,New Delhi:Orange;Shivaji Stadium:Orange
+Shivaji Stadium,Orange,New Delhi Railway:Orange;New Delhi:Orange;Dhaula Kuan:Orange
+Dhaula Kuan,Orange,Shivaji Stadium:Orange;Delhi Aerocity:Orange
+Delhi Aerocity,Orange,Dhaula Kuan:Orange;IGI Airport:Orange
+Delhi Cantt Airport,Orange,Delhi Cantt:Orange;Dwarka Sector 21 Airport:Orange
+Dwarka Sector 21 Airport,Orange,Delhi Cantt Airport:Orange
+Kashmere Gate Violet,Violet,Lal Quila:Violet
+Lal Quila,Violet,Kashmere Gate Violet:Violet;Jama Masjid:Violet
+Jama Masjid,Violet,Lal Quila:Violet;Delhi Gate:Violet
+Delhi Gate,Violet,Jama Masjid:Violet;ITO:Violet
+ITO,Violet,Delhi Gate:Violet;Mandi House:Violet
+Janpath,Violet,Mandi House:Violet;Central Secretariat Violet:Violet
+Central Secretariat Violet,Violet,Janpath:Violet;Khan Market:Violet
+Khan Market,Violet,Central Secretariat Violet:Violet;JLN Stadium:Violet
+JLN Stadium,Violet,Khan Market:Violet;Jangpura:Violet
+Jangpura,Violet,JLN Stadium:Violet;Lajpat Nagar:Violet
+Moolchand,Violet,Lajpat Nagar:Violet;Kailash Colony:Violet
+Kailash Colony,Violet,Moolchand:Violet;Nehru Place:Violet
+Nehru Place,Violet,Kailash Colony:Violet;Kalkaji Mandir:Violet
+Kalkaji Mandir,Violet;Magenta,Nehru Place:Violet;Govindpuri:Violet;Kalkaji:Magenta
+Govindpuri,Violet,Kalkaji Mandir:Violet;Harkesh Nagar:Violet
+Harkesh Nagar,Violet,Govindpuri:Violet;Jasola Apollo:Violet
+Jasola Apollo,Violet,Harkesh Nagar:Violet;Sarita Vihar:Violet
+Sarita Vihar,Violet,Jasola Apollo:Violet;Mohan Estate:Violet
+Mohan Estate,Violet,Sarita Vihar:Violet;Tughlakabad:Violet
+Tughlakabad,Violet,Mohan Estate:Violet;Badarpur:Violet
+Badarpur,Violet,Tughlakabad:Violet;Sarai:Violet
+Sarai,Violet,Badarpur:Violet;NHPC Chowk:Violet
+NHPC Chowk,Violet,Sarai:Violet;Mewala:Violet
+Mewala,Violet,NHPC Chowk:Violet;Sector 28:Violet
+Sector 28,Violet,Mewala:Violet;Badkal Mor:Violet
+Badkal Mor,Violet,Sector 28:Violet;Old Faridabad:Violet
+Old Faridabad,Violet,Badkal Mor:Violet;Neelam Chowk:Violet
+Neelam Chowk,Violet,Old Faridabad:Violet;Bata Chowk:Violet
+Bata Chowk,Violet,Neelam Chowk:Violet;Escorts Mujesar:Violet
+Escorts Mujesar,Violet,Bata Chowk:Violet;Sant Surdas:Violet
+Sant Surdas,Violet,Escorts Mujesar:Violet;Raja Nahar Singh:Violet
+Raja Nahar Singh,Violet,Sant Surdas:Violet
+Janakpuri West Magenta,Magenta,Dabri Mor Magenta:Magenta
+Dabri Mor Magenta,Magenta,Janakpuri West Magenta:Magenta;Dashrath Puri Magenta:Magenta
+Dashrath Puri Magenta,Magenta,Dabri Mor Magenta:Magenta;Palam Magenta:Magenta
+Palam Magenta,Magenta,Dashrath Puri Magenta:Magenta;Sadar Bazar Magenta:Magenta
+Sadar Bazar Magenta,Magenta,Palam Magenta:Magenta;IGI Airport Magenta:Magenta
+IGI Airport Magenta,Magenta,Sadar Bazar Magenta:Magenta;Shankar Vihar Magenta:Magenta
+Shankar Vihar Magenta,Magenta,IGI Airport Magenta:Magenta;Vasant Vihar Magenta:Magenta
+Vasant Vihar Magenta,Magenta,Shankar Vihar Magenta:Magenta;Munirka Magenta:Magenta
+Munirka Magenta,Magenta,Vasant Vihar Magenta:Magenta;RK Puram Magenta:Magenta
+RK Puram Magenta,Magenta,Munirka Magenta:Magenta;IIT Magenta:Magenta
+IIT Magenta,Magenta,RK Puram Magenta:Magenta;Hauz Khas Magenta:Magenta
+Hauz Khas Magenta,Magenta,IIT Magenta:Magenta;Panchsheel:Magenta
+Panchsheel,Magenta,Hauz Khas Magenta:Magenta;Chirag Delhi:Magenta
+Chirag Delhi,Magenta,Panchsheel:Magenta;Greater Kailash:Magenta
+Greater Kailash,Magenta,Chirag Delhi:Magenta;Nehru Enclave:Magenta
+Nehru Enclave,Magenta,Greater Kailash:Magenta;Kalkaji:Magenta
+Kalkaji,Magenta,Nehru Enclave:Magenta;Kalkaji Mandir:Magenta
+Okhla NSIC,Magenta,Kalkaji Mandir:Magenta;Sukhdev Vihar:Magenta
+Sukhdev Vihar,Magenta,Okhla NSIC:Magenta;Jamia Millia:Magenta
+Jamia Millia,Magenta,Sukhdev Vihar:Magenta;Okhla Vihar:Magenta
+Okhla Vihar,Magenta,Jamia Millia:Magenta;Jasola Vihar:Magenta
+Jasola Vihar,Magenta,Okhla Vihar:Magenta;Kalindi Kunj:Magenta
+Kalindi Kunj,Magenta,Jasola Vihar:Magenta;Okhla Bird Sanctuary:Magenta
+Okhla Bird Sanctuary,Magenta,Kalindi Kunj:Magenta;Botanical Garden:Magenta
+Kohat Enclave,Red,Netaji Subhash Place:Red;Pitampura:Red
+Pitampura,Red,Kohat Enclave:Red;Rohini East:Red
+Rohini East,Red,Pitampura:Red;Rohini West:Red
+Rohini West,Red,Rohini East:Red;Rithala:Red
+Rithala,Red,Rohini West:Red
+Kanhaiya Nagar,Red,Inderlok:Red;Keshav Puram:Red
+Keshav Puram,Red,Kanhaiya Nagar:Red
+Anand Vihar ISBT,Blue,Anand Vihar:Blue;Karkardooma Metro:Blue
+Karkardooma Metro,Blue,Anand Vihar ISBT:Blue;Karkardooma:Blue;Preet Vihar:Blue
+Preet Vihar,Blue,Karkardooma Metro:Blue;Nirman Vihar:Blue
+Nirman Vihar,Blue,Preet Vihar:Blue;Laxmi Nagar:Blue
+Laxmi Nagar,Blue,Nirman Vihar:Blue;Vaishali:Blue
+Vaishali,Blue,Laxmi Nagar:Blue;Kaushambi:Blue
+Kaushambi,Blue,Vaishali:Blue;Ghaziabad:Blue
+Ghaziabad,Blue,Kaushambi:Blue;Electronic City:Blue
+Electronic City,Blue,Ghaziabad:Blue

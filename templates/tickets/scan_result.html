@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Scan Result - Metro System{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body text-center py-5">
+                {% if last_scan and last_scan.success %}
+                    <i class="bi bi-check-circle-fill text-success" style="font-size: 5rem;"></i>
+                    <h3 class="mt-3 text-success">Scan Successful!</h3>
+                {% else %}
+                    <i class="bi bi-x-circle-fill text-danger" style="font-size: 5rem;"></i>
+                    <h3 class="mt-3 text-danger">Scan Failed!</h3>
+                {% endif %}
+                
+                {% if last_scan %}
+                    <p class="mt-3">{{ last_scan.message }}</p>
+                {% endif %}
+                
+                <hr class="my-4">
+                
+                <div class="text-start">
+                    <h5>Ticket Information:</h5>
+                    <ul class="list-unstyled">
+                        <li><strong>Ticket ID:</strong> {{ ticket.ticket_id|truncatechars:20 }}...</li>
+                        <li><strong>Route:</strong> {{ ticket.origin.name }} → {{ ticket.destination.name }}</li>
+                        <li><strong>Status:</strong> 
+                            {% if ticket.status == 'active' %}
+                                <span class="badge bg-success">Active</span>
+                            {% elif ticket.status == 'in_use' %}
+                                <span class="badge bg-warning">In Use</span>
+                            {% elif ticket.status == 'used' %}
+                                <span class="badge bg-secondary">Used</span>
+                            {% else %}
+                                <span class="badge bg-danger">Expired</span>
+                            {% endif %}
+                        </li>
+                        <li><strong>Passenger:</strong> {{ ticket.user.get_full_name|default:ticket.user.username }}</li>
+                    </ul>
+                </div>
+                
+                <div class="mt-4">
+                    <a href="{% url 'tickets:scan_ticket' %}" class="btn btn-metro">
+                        <i class="bi bi-qr-code-scan"></i> Scan Another Ticket
+                    </a>
+                    <a href="{% url 'tickets:scanner_dashboard' %}" class="btn btn-secondary">
+                        <i class="bi bi-speedometer2"></i> Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

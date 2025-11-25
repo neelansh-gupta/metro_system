@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Manage Stations - Metro System{% endblock %}
+
+{% block content %}
+<h2 class="text-white mb-4">Manage Stations</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Existing Stations</h5>
+            </div>
+            <div class="card-body">
+                {% if stations %}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Code</th>
+                                    <th>Line</th>
+                                    <th>Position</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for station in stations %}
+                                    <tr>
+                                        <td>{{ station.name }}</td>
+                                        <td><code>{{ station.code }}</code></td>
+                                        <td>
+                                            <span style="color: {{ station.line.color }};">●</span>
+                                            {{ station.line.name }}
+                                        </td>
+                                        <td>{{ station.position }}</td>
+                                        <td>
+                                            {% if station.is_interchange %}
+                                                <span class="badge bg-warning">Interchange</span>
+                                            {% else %}
+                                                <span class="badge bg-secondary">Regular</span>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {% if station.is_active %}
+                                                <span class="badge bg-success">Active</span>
+                                            {% else %}
+                                                <span class="badge bg-danger">Inactive</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <p class="text-muted text-center">No stations configured</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Add New Station</h5>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    
+                    <button type="submit" class="btn btn-metro w-100">
+                        <i class="bi bi-plus-circle"></i> Add Station
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

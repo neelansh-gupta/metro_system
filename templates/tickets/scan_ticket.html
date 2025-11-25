@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Scan Ticket - Metro System{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="bi bi-qr-code-scan"></i> Scan Ticket
+                </h5>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    
+                    <button type="submit" class="btn btn-metro w-100 mt-3">
+                        <i class="bi bi-check-circle"></i> Scan Ticket
+                    </button>
+                </form>
+                
+                <hr class="my-4">
+                
+                <div class="alert alert-info">
+                    <h6>Instructions:</h6>
+                    <ul class="mb-0">
+                        <li>Enter the ticket ID shown on passenger's ticket</li>
+                        <li>Select your current station</li>
+                        <li>Choose Entry for passengers entering the metro</li>
+                        <li>Choose Exit for passengers leaving the metro</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

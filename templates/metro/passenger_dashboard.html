@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - Metro System{% endblock %}
+
+{% block content %}
+<h2 class="text-white mb-4">Welcome, {{ user.first_name|default:user.username }}!</h2>
+
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <i class="bi bi-wallet2 text-success"></i> Balance
+                </h5>
+                <h3 class="text-success">Rs. {{ balance }}</h3>
+                <a href="{% url 'accounts:add_balance' %}" class="btn btn-sm btn-outline-success">
+                    Add Money
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <i class="bi bi-ticket-perforated text-primary"></i> Active Tickets
+                </h5>
+                <h3 class="text-primary">{{ active_tickets.count }}</h3>
+                <a href="{% url 'tickets:my_tickets' %}" class="btn btn-sm btn-outline-primary">
+                    View All
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <i class="bi bi-clock-history text-info"></i> Total Trips
+                </h5>
+                <h3 class="text-info">{{ recent_tickets.count }}</h3>
+                <a href="{% url 'tickets:purchase' %}" class="btn btn-sm btn-outline-info">
+                    Buy Ticket
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Active Tickets</h5>
+            </div>
+            <div class="card-body">
+                {% if active_tickets %}
+                    <div class="list-group">
+                        {% for ticket in active_tickets %}
+                            <a href="{% url 'tickets:ticket_detail' ticket.ticket_id %}" 
+                               class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">
+                                        {{ ticket.origin.name }} → {{ ticket.destination.name }}
+                                    </h6>
+                                    <small>
+                                        <span class="badge bg-success">{{ ticket.get_status_display }}</span>
+                                    </small>
+                                </div>
+                                <small class="text-muted">
+                                    ID: {{ ticket.ticket_id|truncatechars:12 }}... | 
+                                    Rs. {{ ticket.price }}
+                                </small>
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="text-muted">No active tickets</p>
+                    <a href="{% url 'tickets:purchase' %}" class="btn btn-metro">
+                        <i class="bi bi-ticket-perforated"></i> Buy Your First Ticket
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Recent Trips</h5>
+            </div>
+            <div class="card-body">
+                {% if recent_tickets %}
+                    <div class="list-group">
+                        {% for ticket in recent_tickets|slice:":5" %}
+                            <a href="{% url 'tickets:ticket_detail' ticket.ticket_id %}" 
+                               class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1">
+                                        {{ ticket.origin.name }} → {{ ticket.destination.name }}
+                                    </h6>
+                                    <small>
+                                        {% if ticket.status == 'active' %}
+                                            <span class="badge bg-success">Active</span>
+                                        {% elif ticket.status == 'in_use' %}
+                                            <span class="badge bg-warning">In Use</span>
+                                        {% elif ticket.status == 'used' %}
+                                            <span class="badge bg-secondary">Used</span>
+                                        {% else %}
+                                            <span class="badge bg-danger">Expired</span>
+                                        {% endif %}
+                                    </small>
+                                </div>
+                                <small class="text-muted">
+                                    {{ ticket.purchased_at|date:"d M Y, H:i" }}
+                                </small>
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="text-muted">No trip history</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block title %}Ticket Details - Metro System{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="bi bi-ticket-detailed"></i> Ticket Details
+                </h5>
+            </div>
+            <div class="card-body">
+                <!-- Status Badge -->
+                <div class="text-center mb-4">
+                    {% if ticket.status == 'active' %}
+                        <span class="badge bg-success fs-5">ACTIVE</span>
+                    {% elif ticket.status == 'in_use' %}
+                        <span class="badge bg-warning fs-5">IN USE</span>
+                    {% elif ticket.status == 'used' %}
+                        <span class="badge bg-secondary fs-5">USED</span>
+                    {% else %}
+                        <span class="badge bg-danger fs-5">EXPIRED</span>
+                    {% endif %}
+                </div>
+                
+                <!-- Ticket ID -->
+                <div class="alert alert-light text-center">
+                    <strong>Ticket ID:</strong><br>
+                    <code class="fs-6">{{ ticket.ticket_id }}</code>
+                </div>
+                
+                <!-- Journey Details -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h6 class="text-muted">From</h6>
+                                <h4>{{ ticket.origin.name }}</h4>
+                                <small class="text-muted">{{ ticket.origin.line.name }} Line</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h6 class="text-muted">To</h6>
+                                <h4>{{ ticket.destination.name }}</h4>
+                                <small class="text-muted">{{ ticket.destination.line.name }} Line</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Route -->
+                {% if path_stations %}
+                    <div class="mb-4">
+                        <h6>Route ({{ path_stations|length }} stations):</h6>
+                        <div class="d-flex flex-wrap">
+                            {% for station in path_stations %}
+                                <span class="station-badge" style="background: {{ station.line.color }}20; border: 1px solid {{ station.line.color }};">
+                                    {{ station.name }}
+                                    {% if not forloop.last %}→{% endif %}
+                                </span>
+                            {% endfor %}
+                        </div>
+                        <small class="text-muted mt-2 d-block">
+                            <i class="bi bi-info-circle"></i> 
+                            {% if path_stations|length > 2 %}
+                                This is the shortest route. Change lines at interchange stations if needed.
+                            {% else %}
+                                Direct route, no line changes required.
+                            {% endif %}
+                        </small>
+                    </div>
+                {% endif %}
+                
+                <!-- Ticket Information -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <small class="text-muted">Price</small>
+                        <h5>Rs. {{ ticket.price }}</h5>
+                    </div>
+                    <div class="col-md-4">
+                        <small class="text-muted">Purchased</small>
+                        <h6>{{ ticket.purchased_at|date:"d M Y" }}</h6>
+                        <small>{{ ticket.purchased_at|date:"H:i" }}</small>
+                    </div>
+                    <div class="col-md-4">
+                        <small class="text-muted">Passenger</small>
+                        <h6>{{ ticket.user.get_full_name|default:ticket.user.username }}</h6>
+                    </div>
+                </div>
+                
+                {% if ticket.entry_time or ticket.exit_time %}
+                    <hr class="my-4">
+                    <div class="row">
+                        {% if ticket.entry_time %}
+                            <div class="col-md-6">
+                                <small class="text-muted">Entry Time</small>
+                                <h6>{{ ticket.entry_time|date:"d M Y, H:i" }}</h6>
+                            </div>
+                        {% endif %}
+                        {% if ticket.exit_time %}
+                            <div class="col-md-6">
+                                <small class="text-muted">Exit Time</small>
+                                <h6>{{ ticket.exit_time|date:"d M Y, H:i" }}</h6>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+                
+                <!-- QR Code Placeholder -->
+                {% if ticket.status == 'active' %}
+                    <div class="text-center mt-4 p-4 bg-light rounded">
+                        <i class="bi bi-qr-code" style="font-size: 8rem;"></i>
+                        <p class="text-muted mt-2">Show this QR code at the station</p>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'tickets:my_tickets' %}" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left"></i> Back to My Tickets
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

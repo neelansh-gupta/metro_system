@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Manage Lines - Metro System{% endblock %}
+
+{% block content %}
+<h2 class="text-white mb-4">Manage Metro Lines</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Existing Lines</h5>
+            </div>
+            <div class="card-body">
+                {% if lines %}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Color</th>
+                                    <th>Stations</th>
+                                    <th>Status</th>
+                                    <th>Booking</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for line in lines %}
+                                    <tr>
+                                        <td>{{ line.name }} Line</td>
+                                        <td>
+                                            <span style="color: {{ line.color }}; font-size: 1.5rem;">●</span>
+                                        </td>
+                                        <td>{{ line.stations.count }}</td>
+                                        <td>
+                                            {% if line.is_active %}
+                                                <span class="badge bg-success">Active</span>
+                                            {% else %}
+                                                <span class="badge bg-danger">Inactive</span>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {% if line.ticket_booking_enabled %}
+                                                <span class="badge bg-info">ON</span>
+                                            {% else %}
+                                                <span class="badge bg-warning">OFF</span>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="{% url 'metro:toggle_line_service' line.id %}" 
+                                                   class="btn btn-outline-primary" 
+                                                   title="Toggle Service">
+                                                    {% if line.is_active %}
+                                                        <i class="bi bi-pause-circle"></i>
+                                                    {% else %}
+                                                        <i class="bi bi-play-circle"></i>
+                                                    {% endif %}
+                                                </a>
+                                                <a href="{% url 'metro:toggle_line_booking' line.id %}" 
+                                                   class="btn btn-outline-info" 
+                                                   title="Toggle Booking">
+                                                    {% if line.ticket_booking_enabled %}
+                                                        <i class="bi bi-lock"></i>
+                                                    {% else %}
+                                                        <i class="bi bi-unlock"></i>
+                                                    {% endif %}
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <p class="text-muted text-center">No metro lines configured</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Add New Line</h5>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    
+                    <button type="submit" class="btn btn-metro w-100">
+                        <i class="bi bi-plus-circle"></i> Add Line
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
